@@ -1,0 +1,39 @@
+# CODIGO PARA OPERAÇÕES COM VETORES
+# Versão: NumPy
+
+import numpy as np
+
+# Entrada do usuário
+entrada1 = input("Primeiro vetor, separe com ',' : ")
+entrada2 = input("Segundo vetor, separe com ',' : ")
+
+# Converte direto para arrays NumPy
+vetor1 = np.array([int(x.strip()) for x in entrada1.split(',')])
+vetor2 = np.array([int(x.strip()) for x in entrada2.split(',')])
+
+if len(vetor1) != len(vetor2):
+    print("Os vetores têm tamanhos diferentes.")
+else:
+    op = input("Escolha a operação (+, -, *, /): ")
+
+    operacoes = {
+        '+': vetor1 + vetor2,
+        '-': vetor1 - vetor2,
+        '*': vetor1 * vetor2,
+        '/': np.divide(vetor1, vetor2, where=vetor2 != 0)  # protege divisão por zero
+    }
+
+    if op not in operacoes:
+        print("Operação inválida.")
+    else:
+        resultado = operacoes[op]
+        print("\nPrimeiro vetor:", vetor1)
+        print("Segundo vetor: ", vetor2)
+        print(f"Resultado ({op}):", resultado)
+
+        # Estatísticas automáticas
+        print("\n📊 Estatísticas do resultado:")
+        print(f"  Soma:   {resultado.sum()}")
+        print(f"  Média:  {resultado.mean():.2f}")
+        print(f"  Maior:  {resultado.max()}")
+        print(f"  Menor:  {resultado.min()}")
