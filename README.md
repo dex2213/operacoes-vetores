@@ -104,7 +104,7 @@ operacoes-vetores/
 
 **Andre Ferreira**  
 Estudante de Ciências da Computação — GRAN Faculdade  
-[LinkedIn](https://www.linkedin.com/in/andreferreira-26070434a)
+www.linkedin.com/in/andre-ferreira-26070434a
 
 ---
 
